@@ -25,17 +25,24 @@ truncation_length = 5
 truncate_to_repo = false
 fish_style_pwd_dir_length = 0
 
-# Git branch: show * when dirty
+# Git branch
 [git_branch]
-format = "on [$branch]($style)"
+format = '[$symbol$branch(:$remote_branch) ]($style)'
 
-# Git status: show changes
+# Git status: show detailed status with counts
 [git_status]
-format = '([$all_status$ahead_behind]($style)) '
-modified = "*"
-staged = "+"
-untracked = "?"
-deleted = "-"
+style = "#f05133"
+format = '($conflicted$staged$modified$renamed$deleted$untracked$stashed$ahead_behind )'
+conflicted = "[=${count}](red)"
+staged = "[+${count}](green)"
+modified = "[*${count}](red)"
+renamed = "[R${count}](208)"
+deleted = "[-${count}](208)"
+untracked = "[?${count}](red)"
+stashed = "[S${count}](cyan)"
+ahead = "[↑${count}](purple)"
+behind = "[↓${count}](yellow)"
+up_to_date = ""
 
 # Command duration: show if > 2 seconds
 [cmd_duration]
