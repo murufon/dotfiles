@@ -35,7 +35,7 @@ dotfiles/
 
 ## Git
 
-- commit前に機密情報（APIキー、パスワード等）が含まれていないことを確認する
+- commit/push前に機密情報（APIキー、パスワード等）が含まれていないことを確認する
 - ユーザー名: `murufon` / メール: `murufon2@gmail.com`（本名を使用しない）
 
 ## 開発時の注意
