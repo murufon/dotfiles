@@ -15,13 +15,15 @@
 dotfiles/
 ├── CLAUDE.md               # このファイル（リポジトリの説明）
 ├── README.md               # セットアップ手順
-├── symlink.sh              # シンボリックリンク作成
+├── symlink.sh              # シンボリックリンク作成（WSL用）
 ├── .gitignore
 ├── claude/
 │   ├── CLAUDE.md           # グローバル設定（~/.claude/へリンク）
 │   ├── settings.json
 │   ├── mcp_servers.json
 │   └── commands/
+├── wezterm/
+│   └── wezterm.lua         # Windows側に手動コピー
 ├── zsh/
 │   └── .zshrc
 └── vim/
