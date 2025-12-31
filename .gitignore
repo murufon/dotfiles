@@ -1,0 +1,7 @@
+# Claude Code credentials (sensitive)
+claude/credentials
+claude/statsig/
+claude/*.log
+
+# OS files
+.DS_Store

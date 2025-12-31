@@ -4,34 +4,41 @@
 
 ## 方針
 
+- **公開リポジトリとして運用** - 機密情報（プロキシ、認証情報等）は含めない
 - 完全自動化は目指さない。「次にPCセットアップするとき迷わない」が目標
-- Windows側はセットアップMD + wingetスクリプト、WSL側は従来のdotfiles管理で分ける
-- 年1回あるかないかのセットアップのために完璧なスクリプトを維持するのは割に合わない
+- 実際にセットアップするときに足りなかった部分を追記する、生きたドキュメント
+- PC固有の設定は `.zshrc.local` 等のlocalファイルに分離する
 
-## 構造（予定）
+## 構造
 
 ```
 dotfiles/
-├── CLAUDE.md
-├── README.md              # 全体の流れ
-├── windows/
-│   ├── SETUP.md           # 手動手順（Office, ドライバ等）
-│   ├── install-apps.ps1   # wingetで入るもの
-│   └── settings/          # エクスポートした設定ファイル
-├── wsl/
-│   ├── install.sh         # apt, pip等
-│   └── dotfiles/          # .zshrc, .vimrc等
-└── vscode/
-    └── settings.json      # Settings Sync使うなら不要
+├── CLAUDE.md               # このファイル（リポジトリの説明）
+├── README.md               # セットアップ手順
+├── symlink.sh              # シンボリックリンク作成
+├── .gitignore
+├── claude/
+│   ├── CLAUDE.md           # グローバル設定（~/.claude/へリンク）
+│   ├── settings.json
+│   ├── mcp_servers.json
+│   └── commands/
+├── zsh/
+│   └── .zshrc
+└── vim/
+    └── .vimrc
 ```
 
-## 書くべきこと
+## dotfiles構成
 
-- インストールしたものリスト（wingetコマンド形式だとコピペで使える）
-- 手動設定が必要な箇所のスクショ or 手順メモ
-- ハマったポイントの備忘録
+- `~/.zshrc` → `~/dotfiles/zsh/.zshrc` へのシンボリックリンク
+- `~/.zshrc.local` → PC固有の設定（プロキシ等）。gitで管理しない
+
+## Git
+
+- commit前に機密情報（APIキー、パスワード等）が含まれていないことを確認する
+- ユーザー名: `murufon` / メール: `murufon2@gmail.com`（本名を使用しない）
 
 ## 開発時の注意
 
-- 実際にセットアップするときに足りなかった部分を追記していく
-- 生きたドキュメントとして育てる
+- 設定ファイルを編集したらこのリポジトリにコミット
+- 新しいツールを追加したらREADME.mdとsymlink.shを更新
