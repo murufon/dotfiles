@@ -10,8 +10,8 @@
 # Prompt format
 format = """
 $directory\
-$git_branch\
-$git_status\
+$git_branch \
+$git_status \
 $cmd_duration\
 $line_break\
 $character"""
@@ -27,12 +27,12 @@ fish_style_pwd_dir_length = 0
 
 # Git branch
 [git_branch]
-format = '[$symbol$branch(:$remote_branch) ]($style)'
+format = '[$symbol$branch(:$remote_branch)]($style)'
 
 # Git status: show detailed status with counts
 [git_status]
 style = "#f05133"
-format = '($conflicted$staged$modified$renamed$deleted$untracked$stashed$ahead_behind )'
+format = '($conflicted$staged$modified$renamed$deleted$untracked$stashed$ahead_behind)'
 conflicted = "[=${count}](red)"
 staged = "[+${count}](green)"
 modified = "[*${count}](red)"
