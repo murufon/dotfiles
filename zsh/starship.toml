@@ -1,21 +1,12 @@
 # Starship configuration
 # https://starship.rs/config/
+# ref: https://github.com/starship/starship/discussions/1107
 #
 # Features:
 #   - Current directory
 #   - Git status
 #   - Command execution time
 #   - Timestamp
-
-# Prompt format
-# format = """
-# $username[@](white)$hostname \
-# $directory\
-# $git_branch\
-# $git_status \
-# $cmd_duration\
-# $line_break\
-# $character"""
 
 format = """
 $username[@](white)$hostname \
@@ -72,7 +63,7 @@ format = "[$branch]($style)"
 style = "bright-black"
 
 [git_status]
-format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](bright-black) ($ahead_behind$stashed)]($style)"
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](bright-black)($ahead_behind$stashed)]($style)"
 style = "cyan"
 conflicted = "​"
 untracked = "​"
@@ -86,7 +77,7 @@ stashed = "≡"
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
-# Command duration: show if > 2 seconds
+# Command duration: show if > 1 seconds
 [cmd_duration]
 min_time = 1_000
 format = "[$duration]($style)"
