@@ -44,6 +44,10 @@ link_dir "$DOTFILES_DIR/claude/commands" ~/.claude/commands
 # zsh
 link "$DOTFILES_DIR/zsh/.zshrc" ~/.zshrc
 
+# Starship
+mkdir -p ~/.config
+link "$DOTFILES_DIR/zsh/starship.toml" ~/.config/starship.toml
+
 # vim
 link "$DOTFILES_DIR/vim/.vimrc" ~/.vimrc
 

@@ -27,12 +27,15 @@ stable版は2024年2月から約2年間更新されておらず、[開発者自�
 ### 3. WSL環境
 
 ```bash
-# zshインストール
+# zsh
 sudo apt update
-sudo apt install -y zsh
+sudo apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s /usr/bin/zsh
 
-# dotfilesをクローンしてシンボリックリンク作成
+# Starship (https://starship.rs/)
+curl -sS https://starship.rs/install.sh | sh
+
+# dotfiles
 cd ~
 git clone https://github.com/murufon/dotfiles.git
 cd dotfiles
@@ -51,7 +54,8 @@ dotfiles/
 ├── wezterm/
 │   └── wezterm.lua         # Windows側に手動コピー
 ├── zsh/
-│   └── .zshrc
+│   ├── .zshrc
+│   └── starship.toml       # Starship設定
 ├── vim/
 │   └── .vimrc
 ├── symlink.sh              # シンボリックリンク作成（WSL用）

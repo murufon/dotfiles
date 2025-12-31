@@ -1,0 +1,49 @@
+# Starship configuration
+# https://starship.rs/config/
+#
+# Features:
+#   - Current directory
+#   - Git status
+#   - Command execution time
+#   - Timestamp
+
+# Prompt format
+format = """
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$line_break\
+$character"""
+
+# Right prompt: timestamp
+right_format = "$time"
+
+# Directory: show current folder
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+
+# Git branch
+[git_branch]
+format = "on [$branch]($style) "
+
+# Git status: show changes
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+
+# Command duration: show if > 2 seconds
+[cmd_duration]
+min_time = 2_000
+format = "took [$duration]($style) "
+
+# Timestamp: right side of prompt
+[time]
+disabled = false
+format = "[$time]($style)"
+time_format = "%H:%M"
+
+# Prompt character
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
