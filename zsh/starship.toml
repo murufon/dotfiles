@@ -8,16 +8,38 @@
 #   - Timestamp
 
 # Prompt format
+# format = """
+# $username[@](white)$hostname \
+# $directory\
+# $git_branch\
+# $git_status \
+# $cmd_duration\
+# $line_break\
+# $character"""
+
 format = """
+$username[@](white)$hostname \
 $directory\
-$git_branch \
-$git_status \
+$git_branch\
+$git_state\
+$git_status\
 $cmd_duration\
+$fill\
+$time\
 $line_break\
 $character"""
 
-# Right prompt: timestamp
-right_format = "$time"
+# Username
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "white"
+
+# Hostname
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+style = "white"
 
 # Directory: show current folder
 [directory]
@@ -26,28 +48,55 @@ truncate_to_repo = false
 fish_style_pwd_dir_length = 0
 
 # Git branch
-[git_branch]
-format = '[$symbol$branch(:$remote_branch)]($style)'
+# [git_branch]
+# format = '[$symbol$branch(:$remote_branch)]($style)'
 
-# Git status: show detailed status with counts
+# # Git status: show detailed status with counts
+# [git_status]
+# style = "#f05133"
+# format = '($conflicted$staged$modified$renamed$deleted$untracked$stashed$ahead_behind)'
+# conflicted = "[=${count}](red)"
+# staged = "[+${count}](green)"
+# modified = "[*${count}](red)"
+# renamed = "[R${count}](208)"
+# deleted = "[-${count}](208)"
+# untracked = "[?${count}](red)"
+# stashed = "[S${count}](cyan)"
+# ahead = "[↑${count}](purple)"
+# behind = "[↓${count}](yellow)"
+# up_to_date = ""
+
+
+[git_branch]
+format = "[$branch]($style)"
+style = "bright-black"
+
 [git_status]
-style = "#f05133"
-format = '($conflicted$staged$modified$renamed$deleted$untracked$stashed$ahead_behind)'
-conflicted = "[=${count}](red)"
-staged = "[+${count}](green)"
-modified = "[*${count}](red)"
-renamed = "[R${count}](208)"
-deleted = "[-${count}](208)"
-untracked = "[?${count}](red)"
-stashed = "[S${count}](cyan)"
-ahead = "[↑${count}](purple)"
-behind = "[↓${count}](yellow)"
-up_to_date = ""
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](bright-black) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
 
 # Command duration: show if > 2 seconds
 [cmd_duration]
-min_time = 2_000
-format = "took [$duration]($style) "
+min_time = 1_000
+format = "[$duration]($style)"
+style = "yellow"
+
+# Fill: space between left and right content
+[fill]
+# symbol = " "
+symbol = '─'
+style = 'fg:240'
 
 # Timestamp: right side of prompt
 [time]
