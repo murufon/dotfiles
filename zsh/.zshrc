@@ -5,10 +5,12 @@
 #
 # Structure:
 #   1. Environment variables
-#   2. Plugins
-#   3. Starship prompt
-#   4. Aliases
-#   5. Local settings (.zshrc.local)
+#   2. Completion settings
+#   3. Plugins
+#   4. OSC 7 (directory notification for WezTerm)
+#   5. Starship prompt
+#   6. Aliases
+#   7. Local settings (.zshrc.local)
 
 # ============================================================
 # 1. Environment variables
@@ -17,7 +19,23 @@
 export PATH="$HOME/.local/bin:$PATH"
 
 # ============================================================
-# 2. Plugins (installed via apt)
+# 2. Completion settings
+# ============================================================
+
+# Enable completion system
+autoload -Uz compinit && compinit
+
+# Menu selection: highlight current selection
+zstyle ':completion:*' menu select
+
+# Use LS_COLORS for file completion colors
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Case-insensitive completion
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# ============================================================
+# 3. Plugins (installed via apt)
 # ============================================================
 
 # zsh-autosuggestions: suggests commands from history as you type
@@ -31,7 +49,18 @@ export PATH="$HOME/.local/bin:$PATH"
     source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # ============================================================
-# 3. Starship prompt
+# 4. OSC 7 - Tell terminal the current directory
+# ============================================================
+
+# WezTerm uses this to open new tabs in the same directory
+_osc7_cwd() {
+    printf '\e]7;file://%s%s\e\\' "$HOST" "$PWD"
+}
+add-zsh-hook chpwd _osc7_cwd
+_osc7_cwd  # Run once at startup
+
+# ============================================================
+# 5. Starship prompt
 # ============================================================
 
 # Starship: cross-shell prompt (https://starship.rs/)
@@ -39,14 +68,14 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(starship init zsh)"
 
 # ============================================================
-# 4. Aliases
+# 6. Aliases
 # ============================================================
 
 # Claude Code
 alias cc='claude --dangerously-skip-permissions'
 
 # ============================================================
-# 5. Local settings (not tracked in git)
+# 7. Local settings (not tracked in git)
 # ============================================================
 
 # Load machine-specific settings (proxy, credentials, etc.)

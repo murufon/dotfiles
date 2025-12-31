@@ -21,16 +21,21 @@ right_format = "$time"
 
 # Directory: show current folder
 [directory]
-truncation_length = 3
-truncate_to_repo = true
+truncation_length = 5
+truncate_to_repo = false
+fish_style_pwd_dir_length = 0
 
-# Git branch
+# Git branch: show * when dirty
 [git_branch]
-format = "on [$branch]($style) "
+format = "on [$branch]($style)"
 
 # Git status: show changes
 [git_status]
-format = '([$all_status$ahead_behind]($style) )'
+format = '([$all_status$ahead_behind]($style)) '
+modified = "*"
+staged = "+"
+untracked = "?"
+deleted = "-"
 
 # Command duration: show if > 2 seconds
 [cmd_duration]
@@ -41,7 +46,7 @@ format = "took [$duration]($style) "
 [time]
 disabled = false
 format = "[$time]($style)"
-time_format = "%H:%M"
+time_format = "%Y-%m-%d %H:%M:%S"
 
 # Prompt character
 [character]
