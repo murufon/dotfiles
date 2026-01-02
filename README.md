@@ -24,7 +24,20 @@ stable版は2024年2月から約2年間更新されておらず、[開発者自�
    cp \\wsl$\Ubuntu\home\murufon\dotfiles\wezterm\wezterm.lua $HOME\.wezterm.lua
    ```
 
-### 3. WSL環境
+### 3. AutoHotkey (Windows)
+
+WezTermをグローバルホットキー（Win+I）で呼び出すためのスクリプト。
+
+1. [AutoHotkey v2](https://www.autohotkey.com/)をインストール
+2. スクリプトをスタートアップにコピー（PowerShell）:
+   ```powershell
+   cp \\wsl$\Ubuntu\home\murufon\dotfiles\autohotkey\wezterm-toggle.ahk "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\"
+   ```
+3. スクリプトをダブルクリックで起動（次回ログインからは自動起動）
+
+※ Win+I は Windows設定のデフォルトショートカットを上書きします
+
+### 4. WSL環境
 
 ```bash
 # zsh
@@ -46,6 +59,8 @@ cd dotfiles
 
 ```
 dotfiles/
+├── autohotkey/
+│   └── wezterm-toggle.ahk  # Windows側に手動コピー
 ├── claude/                 # Claude Code設定
 │   ├── CLAUDE.md           # グローバル指示
 │   ├── settings.json
