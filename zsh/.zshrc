@@ -72,7 +72,10 @@ eval "$(starship init zsh)"
 # ============================================================
 
 # Claude Code
-alias cc='claude --dangerously-skip-permissions'
+alias claude='claude --dangerously-skip-permissions'
+
+# Docker
+alias dc='docker compose'
 
 # ============================================================
 # 7. Local settings (not tracked in git)
