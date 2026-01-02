@@ -22,9 +22,11 @@ config.font = wezterm.font("HackGen Console NF")
 config.font_size = 11.0
 config.window_background_opacity = 0.9
 config.default_cursor_style = 'BlinkingBar'
+config.enable_scroll_bar = true
 
 -- 入力設定
 config.use_ime = true
+config.hide_mouse_cursor_when_typing = false
 
 -- タブバー設定
 -- config.use_fancy_tab_bar = false
