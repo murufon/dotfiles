@@ -13,7 +13,7 @@ $username[@](white)$hostname \
 $directory\
 $git_branch\
 $git_state\
-$git_status\
+$git_status \
 $cmd_duration\
 $fill\
 $time\
