@@ -9,8 +9,12 @@ end
 -- ドメイン設定（WSLのディストリビューション名を自動検出）
 local function get_wsl_domain()
   local success, stdout = wezterm.run_child_process({ 'wsl', '-l', '-q' })
-  if success and stdout:find('Ubuntu%-22%.04') then
-    return 'WSL:Ubuntu-22.04'
+  if success then
+    -- UTF-16LEのヌル文字を除去
+    local cleaned = stdout:gsub('\0', '')
+    if cleaned:find('Ubuntu%-22%.04') then
+      return 'WSL:Ubuntu-22.04'
+    end
   end
   return 'WSL:Ubuntu'
 end
