@@ -4,6 +4,15 @@
 
 ## セットアップ
 
+### 0. このリポジトリのクローン (WSL)
+
+このリポジトリをWSL側にクローンする
+
+```bash
+cd ~
+git clone https://github.com/murufon/dotfiles.git
+```
+
 ### 1. フォント (Windows)
 
 <a href="https://github.com/yuru7/HackGen" target="_blank" rel="noopener noreferrer">HackGen</a>のNerd Fonts版をインストール。
@@ -48,10 +57,8 @@ chsh -s /usr/bin/zsh
 # Starship (<a href="https://starship.rs/" target="_blank" rel="noopener noreferrer">https://starship.rs/</a>)
 curl -sS https://starship.rs/install.sh | sh
 
-# dotfiles
-cd ~
-git clone <a href="https://github.com/murufon/dotfiles.git" target="_blank" rel="noopener noreferrer">https://github.com/murufon/dotfiles.git</a>
-cd dotfiles
+# シンボリックリンク作成
+cd ~/dotfiles
 ./symlink.sh
 ```
 
