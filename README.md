@@ -26,7 +26,7 @@ WSL2用ターミナルとして[WezTerm](https://wezterm.org/)のnightly版を�
 
 stable版は2024年2月から約2年間更新されておらず、[開発者自身がnightly版をdaily driverとして使用している](https://wezterm.org/changelog.html)。
 
-1. [WezTerm Nightly Releases](https://github.com/wez/wezterm/releases/nightly)からWindows用インストーラをダウンロード
+1. [Download - Wez's Terminal Emulator](https://wezterm.org/installation.html)からWindows用インストーラをダウンロード
 2. インストーラを実行
 3. 設定ファイルをコピー（PowerShell）:
    ```powershell
