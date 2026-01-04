@@ -6,18 +6,18 @@
 
 ### 1. フォント (Windows)
 
-[HackGen](https://github.com/yuru7/HackGen)のNerd Fonts版をインストール。
+<a href="https://github.com/yuru7/HackGen" target="_blank" rel="noopener noreferrer">HackGen</a>のNerd Fonts版をインストール。
 
-1. [HackGen Releases](https://github.com/yuru7/HackGen/releases)から`HackGen_NF_vX.X.X.zip`をダウンロード
+1. <a href="https://github.com/yuru7/HackGen/releases" target="_blank" rel="noopener noreferrer">HackGen Releases</a>から`HackGen_NF_vX.X.X.zip`をダウンロード
 2. 展開して`HackGenConsoleNF-Regular.ttf`等をインストール
 
 ### 2. WezTerm (Windows)
 
-WSL2用ターミナルとして[WezTerm](https://wezterm.org/)のnightly版をインストール。
+WSL2用ターミナルとして<a href="https://wezterm.org/" target="_blank" rel="noopener noreferrer">WezTerm</a>のnightly版をインストール。
 
-stable版は2024年2月から約2年間更新されておらず、[開発者自身がnightly版をdaily driverとして使用している](https://wezterm.org/changelog.html)。
+stable版は2024年2月から約2年間更新されておらず、<a href="https://wezterm.org/changelog.html" target="_blank" rel="noopener noreferrer">開発者自身がnightly版をdaily driverとして使用している</a>。
 
-1. [WezTerm Nightly Releases](https://github.com/wez/wezterm/releases/nightly)からWindows用インストーラをダウンロード
+1. <a href="https://github.com/wez/wezterm/releases/nightly" target="_blank" rel="noopener noreferrer">WezTerm Nightly Releases</a>からWindows用インストーラをダウンロード
 2. インストーラを実行
 3. 設定ファイルをコピー（PowerShell）:
    ```powershell
@@ -28,7 +28,7 @@ stable版は2024年2月から約2年間更新されておらず、[開発者自�
 
 WezTermをグローバルホットキー（Win+I）で呼び出すためのスクリプト。
 
-1. [AutoHotkey v2](https://www.autohotkey.com/)をインストール
+1. <a href="https://www.autohotkey.com/" target="_blank" rel="noopener noreferrer">AutoHotkey v2</a>をインストール
 2. スクリプトをスタートアップにコピー（PowerShell）:
    ```powershell
    cp \\wsl$\Ubuntu\home\murufon\dotfiles\autohotkey\wezterm-toggle.ahk "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup\"
@@ -45,12 +45,12 @@ sudo apt update
 sudo apt install -y zsh zsh-autosuggestions zsh-syntax-highlighting
 chsh -s /usr/bin/zsh
 
-# Starship (https://starship.rs/)
+# Starship (<a href="https://starship.rs/" target="_blank" rel="noopener noreferrer">https://starship.rs/</a>)
 curl -sS https://starship.rs/install.sh | sh
 
 # dotfiles
 cd ~
-git clone https://github.com/murufon/dotfiles.git
+git clone <a href="https://github.com/murufon/dotfiles.git" target="_blank" rel="noopener noreferrer">https://github.com/murufon/dotfiles.git</a>
 cd dotfiles
 ./symlink.sh
 ```
