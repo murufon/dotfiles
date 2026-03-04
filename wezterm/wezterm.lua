@@ -115,10 +115,10 @@ config.keys = {
     mods = 'SHIFT',
     action = wezterm.action.SendString('\n'),
   },
-  -- Ctrl+Nで新しいタブ
+  -- Ctrl+Shift+Nで新しいタブ（Zellijと干渉しないように）
   {
-    key = 'n',
-    mods = 'CTRL',
+    key = 'N',
+    mods = 'CTRL|SHIFT',
     action = wezterm.action.SpawnTab 'CurrentPaneDomain',
   },
   -- Ctrl+Wでペインを閉じる
