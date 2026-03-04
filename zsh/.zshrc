@@ -53,6 +53,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # ============================================================
 
 # WezTerm uses this to open new tabs in the same directory
+autoload -Uz add-zsh-hook
 _osc7_cwd() {
     printf '\e]7;file://%s%s\e\\' "$HOST" "$PWD"
 }

@@ -23,6 +23,8 @@ config.use_ime = true
 config.hide_mouse_cursor_when_typing = false
 
 -- タブバー設定
+config.show_new_tab_button_in_tab_bar = false
+config.show_close_tab_button_in_tabs = false
 config.window_frame = {
   font = wezterm.font("HackGen Console NF", { weight = 'Bold' }),
   font_size = 10.0,
@@ -52,7 +54,6 @@ config.colors = {
       bg_color = '#3d425b',
       fg_color = '#c6c8d1',
     },
-    inactive_tab_edge = '#c6c8d1',
   },
 }
 
