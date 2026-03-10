@@ -75,6 +75,8 @@ dotfiles/
 │   └── commands/           # カスタムスラッシュコマンド
 ├── wezterm/
 │   └── wezterm.lua         # Windows側に手動コピー
+├── zellij/
+│   └── config.kdl          # zellij設定（テーマ・キーバインド）
 ├── zsh/
 │   ├── .zshrc
 │   └── starship.toml       # Starship設定

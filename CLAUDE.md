@@ -24,6 +24,8 @@ dotfiles/
 │   └── commands/
 ├── wezterm/
 │   └── wezterm.lua         # Windows側に手動コピー
+├── zellij/
+│   └── config.kdl          # zellijターミナルマルチプレクサ設定
 ├── zsh/
 │   └── .zshrc
 └── vim/

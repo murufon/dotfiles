@@ -49,6 +49,10 @@ link "$DOTFILES_DIR/zsh/.zshrc" ~/.zshrc
 mkdir -p ~/.config
 link "$DOTFILES_DIR/zsh/starship.toml" ~/.config/starship.toml
 
+# zellij
+mkdir -p ~/.config/zellij
+link "$DOTFILES_DIR/zellij/config.kdl" ~/.config/zellij/config.kdl
+
 # vim
 link "$DOTFILES_DIR/vim/.vimrc" ~/.vimrc
 
