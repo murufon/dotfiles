@@ -3,5 +3,12 @@
   "attribution": {
     "commit": "",
     "pr": ""
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/saeki/.claude/statusline-command.sh"
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "effortLevel": "high",
+  "model": "opus"
 }

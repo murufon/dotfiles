@@ -39,6 +39,7 @@ mkdir -p ~/.claude
 link "$DOTFILES_DIR/claude/CLAUDE.md" ~/.claude/CLAUDE.md
 link "$DOTFILES_DIR/claude/settings.json" ~/.claude/settings.json
 link "$DOTFILES_DIR/claude/mcp_servers.json" ~/.claude/mcp_servers.json
+link "$DOTFILES_DIR/claude/statusline-command.sh" ~/.claude/statusline-command.sh
 link_dir "$DOTFILES_DIR/claude/commands" ~/.claude/commands
 
 # zsh
