@@ -41,6 +41,9 @@ link "$DOTFILES_DIR/claude/settings.json" ~/.claude/settings.json
 link "$DOTFILES_DIR/claude/mcp_servers.json" ~/.claude/mcp_servers.json
 link "$DOTFILES_DIR/claude/statusline-command.sh" ~/.claude/statusline-command.sh
 link_dir "$DOTFILES_DIR/claude/commands" ~/.claude/commands
+mkdir -p ~/.claude/scripts ~/.claude/logs
+link "$DOTFILES_DIR/claude/scripts/notify-completion.sh" ~/.claude/scripts/notify-completion.sh
+link "$DOTFILES_DIR/claude/scripts/log-command.sh" ~/.claude/scripts/log-command.sh
 
 # zsh
 link "$DOTFILES_DIR/zsh/.zshrc" ~/.zshrc
