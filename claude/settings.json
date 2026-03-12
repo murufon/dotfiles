@@ -7,10 +7,6 @@
     "commit": "",
     "pr": ""
   },
-  "statusLine": {
-    "type": "command",
-    "command": "bash /home/saeki/.claude/statusline-command.sh"
-  },
   "hooks": {
     "Stop": [
       {
@@ -35,9 +31,11 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "bash /home/saeki/.claude/statusline-command.sh"
+  },
   "language": "Japanese",
   "alwaysThinkingEnabled": true,
-  "skipDangerousModePermissionPrompt": true,
-  "effortLevel": "high",
-  "model": "opus"
+  "skipDangerousModePermissionPrompt": true
 }

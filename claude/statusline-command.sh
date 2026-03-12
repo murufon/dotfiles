@@ -221,6 +221,12 @@ if [ -n "$git_branch" ]; then
   line1+="${SEP}🔀 ${git_branch}"
 fi
 
+# Display shortened cwd (replace $HOME with ~)
+if [ -n "$cwd" ]; then
+  display_cwd="${cwd/#$HOME/\~}"
+  line1+="${SEP}📁 ${display_cwd}"
+fi
+
 # ---------- Line 2 (5h) ----------
 line2=""
 if [ -n "$FIVE_HOUR_PCT" ]; then
